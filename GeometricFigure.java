@@ -10,7 +10,32 @@ public abstract class GeometricFigure {
         this.zCenter = zCenter;
     }
 
+    public double getXCenter() {
+        return xCenter;
+    }
+
+    public void setXCenter(double xCenter) {
+        this.xCenter = xCenter;
+    }
+
+    public double getYCenter() {
+        return yCenter;
+    }
+
+    public void setYCenter(double yCenter) {
+        this.yCenter = yCenter;
+    }
+
+    public double getZCenter() {
+        return zCenter;
+    }
+
+    public void setZCenter(double zCenter) {
+        this.zCenter = zCenter;
+    }
+
     public abstract double calculateVolume();
+    
     public abstract double calculateSurfaceSquare();
 
 }
