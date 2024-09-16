@@ -2,13 +2,13 @@ public class Ball extends GeometricFigure {
     
     private double radius;
 
-    public Ball(double xCenter, double yCenter, double zCenter, double radius) {
-        super(xCenter, yCenter, zCenter);
+    public Ball(double xPositon, double yPositon, double zPositon, double radius) {
+        super(xPositon, yPositon, zPositon);
         this.radius = radius;
     }
 
     public Ball() {
-        this(0, 0, 0, 0);
+        this(0, 0, 0, 1);
     }
 
     public double getRadius() {

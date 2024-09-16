@@ -1,37 +1,37 @@
 public abstract class GeometricFigure {
     
-    private double xCenter;
-    private double yCenter;
-    private double zCenter;
+    private double xPositon;
+    private double yPositon;
+    private double zPositon;
 
-    public GeometricFigure(double xCenter, double yCenter, double zCenter) {
-        this.xCenter = xCenter;
-        this.yCenter = yCenter;
-        this.zCenter = zCenter;
+    public GeometricFigure(double xPositon, double yPositon, double zPositon) {
+        this.xPositon = xPositon;
+        this.yPositon = yPositon;
+        this.zPositon = zPositon;
     }
 
-    public double getXCenter() {
-        return xCenter;
+    public double getXPositon() {
+        return xPositon;
     }
 
-    public void setXCenter(double xCenter) {
-        this.xCenter = xCenter;
+    public void setXPositon(double xPositon) {
+        this.xPositon = xPositon;
     }
 
-    public double getYCenter() {
-        return yCenter;
+    public double getYPositon() {
+        return yPositon;
     }
 
-    public void setYCenter(double yCenter) {
-        this.yCenter = yCenter;
+    public void setYPositon(double yPositon) {
+        this.yPositon = yPositon;
     }
 
-    public double getZCenter() {
-        return zCenter;
+    public double getZPositon() {
+        return zPositon;
     }
 
-    public void setZCenter(double zCenter) {
-        this.zCenter = zCenter;
+    public void setZPositon(double zPositon) {
+        this.zPositon = zPositon;
     }
 
     public abstract double calculateVolume();
