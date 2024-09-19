@@ -6,6 +6,7 @@ public class Parallelepiped extends GeometricFigure {
     private double c;
     private double angleAC;
     private double angleBC;
+    //probems with geometry((
 
     public Parallelepiped(double xPositon, double yPositon, double zPositon, double a, double b, double angleAB, double c, double angleAC, double angleBC) {
         super(xPositon, yPositon, zPositon);
