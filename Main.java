@@ -9,7 +9,8 @@ public class Main {
         ball1.setRadius(9);
         System.out.println(ball1.getRadius());
         System.out.println(ball1.calculateVolume());
-        Parallelepiped p = new Parallelepiped();
+        Parallelepiped p = new Parallelepiped(0, 0, 0, 10, 10, Math.PI / 2, 6, Math.PI / 6, Math.PI / 6);
         System.out.println(p.calculateSurfaceSquare());
+        System.out.println(p.calculateVolume());
     }
 }

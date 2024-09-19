@@ -4,18 +4,21 @@ public class Parallelepiped extends GeometricFigure {
     private double b;
     private double angleAB;
     private double c;
-    private double angleABC;
+    private double angleCAndAB;
     private double angleAC;
     //probems with geometry((
+    //angleCAndAB should be equal or less than 90deg
+    //arccos(cos(angleAC)/cos(anglecAndAB)) sould be equal or less than angleAB - projection of C should be between A and B
 
-    public Parallelepiped(double xPositon, double yPositon, double zPositon, double a, double b, double angleAB, double c, double angleABC, double angleAC) {
+    public Parallelepiped(double xPositon, double yPositon, double zPositon, double a, double b, double angleAB, double c, double angleCAndAB, double angleAC) {
         super(xPositon, yPositon, zPositon);
         this.a = a;
         this.b = b;
         this.angleAB = angleAB;
         this.c = c;
-        this.angleABC = angleABC;
-        this.angleAC = angleAC;
+        this.angleCAndAB = angleCAndAB;
+        if (angleCAndAB == Math.PI / 2) this.angleAC = Math.PI / 2;
+        else this.angleAC = angleAC;
     }
 
     public Parallelepiped() {
@@ -55,11 +58,11 @@ public class Parallelepiped extends GeometricFigure {
     }
 
     public double getAngleABC() {
-        return angleABC;
+        return angleCAndAB;
     }
 
-    public void setAngleABC(double angleABC) {
-        this.angleABC = angleABC;
+    public void setAngleABC(double angleCAndAB) {
+        this.angleCAndAB = angleCAndAB;
     }
 
     public double getAngleAC() {
@@ -72,14 +75,14 @@ public class Parallelepiped extends GeometricFigure {
 
     @Override
     public double calculateVolume() {
-        return 0;
+        return a * b * Math.sin(angleAB) * c * Math.sin(angleCAndAB);
     }
 
     @Override
     public double calculateSurfaceSquare() {
         double angleBC;
-        if (Math.cos(angleABC) != 0) {
-            angleBC = Math.acos(Math.cos(angleABC) * Math.cos(angleAB - Math.acos(Math.cos(angleAC) / Math.cos(angleABC))));
+        if (Math.cos(angleCAndAB) != 0) {
+            angleBC = Math.acos(Math.cos(angleCAndAB) * Math.cos(angleAB - Math.acos(Math.cos(angleAC) / Math.cos(angleCAndAB))));
         }
         else {
             angleBC = Math.acos(0);
