@@ -4,18 +4,18 @@ public class Parallelepiped extends GeometricFigure {
     private double b;
     private double angleAB;
     private double c;
+    private double angleABC;
     private double angleAC;
-    private double angleBC;
     //probems with geometry((
 
-    public Parallelepiped(double xPositon, double yPositon, double zPositon, double a, double b, double angleAB, double c, double angleAC, double angleBC) {
+    public Parallelepiped(double xPositon, double yPositon, double zPositon, double a, double b, double angleAB, double c, double angleABC, double angleAC) {
         super(xPositon, yPositon, zPositon);
         this.a = a;
         this.b = b;
         this.angleAB = angleAB;
         this.c = c;
+        this.angleABC = angleABC;
         this.angleAC = angleAC;
-        this.angleBC = angleBC;
     }
 
     public Parallelepiped() {
@@ -54,20 +54,20 @@ public class Parallelepiped extends GeometricFigure {
         this.c = c;
     }
 
+    public double getAngleABC() {
+        return angleABC;
+    }
+
+    public void setAngleABC(double angleABC) {
+        this.angleABC = angleABC;
+    }
+
     public double getAngleAC() {
         return angleAC;
     }
 
     public void setAngleAC(double angleAC) {
         this.angleAC = angleAC;
-    }
-
-    public double getAngleBC() {
-        return angleBC;
-    }
-
-    public void setAngleBC(double angleBC) {
-        this.angleBC = angleBC;
     }
 
     @Override
@@ -77,6 +77,13 @@ public class Parallelepiped extends GeometricFigure {
 
     @Override
     public double calculateSurfaceSquare() {
+        double angleBC;
+        if (Math.cos(angleABC) != 0) {
+            angleBC = Math.acos(Math.cos(angleABC) * Math.cos(angleAB - Math.acos(Math.cos(angleAC) / Math.cos(angleABC))));
+        }
+        else {
+            angleBC = Math.acos(0);
+        }
         return a * b * Math.sin(angleAB) * 2 + a * c * Math.sin(angleAC) * 2 + b * c * Math.sin(angleBC) * 2;
     }
 

@@ -8,5 +8,8 @@ public class Main {
         System.out.println(cylinder1.getNumberOfCreated());
         ball1.setRadius(9);
         System.out.println(ball1.getRadius());
+        System.out.println(ball1.calculateVolume());
+        Parallelepiped p = new Parallelepiped();
+        System.out.println(p.calculateSurfaceSquare());
     }
 }
